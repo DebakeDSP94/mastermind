@@ -11,10 +11,10 @@ module Outputs
     $stdout.puts "The colors are: red, orange, yellow, green, blue, purple.\n"
   end
 
-  def pick_colors(player)
-    $stdout.puts "#{player.name}, please select four colors"
+  def pick_colors_msg
+    $stdout.puts 'Please select four colors'
     $stdout.puts "enter 'r' for red, 'y' for yellow, 'g' for green, 'b' for blue, or 'p' for purple"
-    $stdout.puts "enter your choices"
+    $stdout.puts 'enter your choices followed by the enter key after each choice'
   end
 
   def invalid_input
@@ -22,10 +22,19 @@ module Outputs
   end
 
   def player_win
-    $stdout.puts "#{player.name} is the winner! You have solved in #{player.moves.length} moves!"
+    $stdout.puts "#{player.name} is the winner! You have solved in #{player_guess_count} moves!"
+  end
+
+  def player_lose
+    $stdout.puts "#{player.name} was unable to break the code in 12 moves or less.  They have lost."
+    $stdout.puts "The code was #{computer_code_out}"
   end
 
   def computer_win
-    $stdout.puts "The computer is the winner! It has solved in #{computer.moves.length} moves."
+    $stdout.puts "The computer is the winner! It has solved in #{computer.moves.length + 1} moves."
+  end
+
+  def computer_lose
+    $stdout.puts 'The computer was unable to crack the code in 12 moves or less.  You win.'
   end
 end

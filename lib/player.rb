@@ -2,12 +2,11 @@
 
 # Creates player instance
 class Player
-  attr_accessor :name, :creator, :moves
+  attr_accessor :name, :creator
 
-  def initialize(name, creator = true, moves = [])
+  def initialize(name)
     @name = name
-    @creator = creator
-    @moves = moves
+    @creator = ''
   end
 
   def assign_name
@@ -17,7 +16,8 @@ class Player
 
   def assign_creator
     $stdout.puts "#{name} Do you want to create or solve?"
-    $stdout.puts "1. Create"
-    $stdout.puts "2. Solve"
-    @creator = gets.chomp.downcase
+    $stdout.puts '1. Create'
+    $stdout.puts '2. Solve'
+    @creator = gets.chomp
+  end
 end
