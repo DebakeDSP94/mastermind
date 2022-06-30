@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require_relative 'board'
 require_relative 'game'
 require_relative 'player'
 require_relative 'outputs'
+require_relative 'computer'
 
 def play_new_game
   game = Game.new

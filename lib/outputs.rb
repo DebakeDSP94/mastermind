@@ -27,11 +27,11 @@ module Outputs
 
   def player_lose
     $stdout.puts "#{player.name} was unable to break the code in 12 moves or less.  They have lost."
-    $stdout.puts "The code was #{computer_code_out}"
+    $stdout.puts "The code was #{color_out}"
   end
 
   def computer_win
-    $stdout.puts "The computer is the winner! It has solved in #{computer.moves.length + 1} moves."
+    $stdout.puts 'The computer is the winner!'
   end
 
   def computer_lose
