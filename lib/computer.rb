@@ -22,14 +22,13 @@ class Computer < Game
 
   def play_comp_turn
     comp_check_guess(@computer_guess)
+    display_board(@computer_guess, @matches, @partials)
+    @computer_count += 1
+    puts "Computer turn count is #{@computer_count}"
     computer_win if @comp_win == true
     return if @comp_win == true
-    display_board(@computer_guess, @matches, @partials)
     eliminate_impossibles
     @computer_guess = @computer_sets.sample
-    p @computer_guess
-    @computer_count += 1
-    p @computer_count
     check_for_comp_lose
   end
 
@@ -58,7 +57,6 @@ class Computer < Game
       indexes_to_delete << idx if comp_check_match(set) == comp_check_match(@computer_guess)
     end
     @computer_sets.delete_if.with_index { |_e, i| indexes_to_delete.include? i }
-    p computer_sets
   end
 
   def comp_check_match(set)
