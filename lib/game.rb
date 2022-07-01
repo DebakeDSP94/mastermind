@@ -94,14 +94,14 @@ class Game
     @partials = 0
     compute_matches
     display_board(@colors, @matches, @partials)
-    @win = true if @matches == 4
+    @win = true if @computer_code == @colors
   end
 
   def compute_matches
-    @colors.each_with_index do |color, idx|
+    @computer_code.each_with_index do |color, idx|
       if @computer_code[idx] == @colors[idx]
         @matches += 1
-      elsif @computer_code.include?(color) && @computer_code[idx] != @colors[idx]
+      elsif @colors.include?(color) && @computer_code[idx] != @colors[idx]
         @partials += 1
       end
     end
