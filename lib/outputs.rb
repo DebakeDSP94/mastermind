@@ -13,7 +13,7 @@ module Outputs
 
   def pick_colors_msg
     $stdout.puts 'Please select four colors'
-    $stdout.puts "enter 'r' for red, 'y' for yellow, 'g' for green, 'b' for blue, or 'p' for purple"
+    $stdout.puts "enter 'r' for red, 'o' for orange,'y' for yellow, 'g' for green, 'b' for blue, or 'p' for purple"
     $stdout.puts 'enter your choices followed by the enter key after each choice'
   end
 

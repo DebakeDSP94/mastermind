@@ -108,6 +108,7 @@ class Game
   end
 
   def display_board(colors, matches, partials)
+    system('clear') || system('cls')
     convert_out(colors)
     @board << " #{@color_out}  Matches = #{matches}  Partials = #{partials}"
     puts @board
